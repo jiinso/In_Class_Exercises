@@ -1,10 +1,11 @@
 #In Class Exercise: Plotting graphs & Dictionaries
 #9/11/2014
 
+
 # Import needed functions.
 import numpy as np
 import pylab as pl
-import string as str
+
 
 
 # Exercise 1
@@ -47,8 +48,13 @@ pl.show()
 
 
 
-#------------------------------------------------------------------------------------
+#------------------------------------------------------------------------------------------------------------------------------------------------------------
 #Exercise 2
+
+# import the function sleep from package time to delay the process of reading through the script.
+from time import sleep
+
+# create a dictionary that has the keys set to the decoding set.
 encode_dict = {
     'a':'n',
     'b':'o',
@@ -105,21 +111,25 @@ encode_dict = {
 }
 
 
-code_in = raw_input('Type in the code you want to encode or decode. Watch the captalization: ')
+code_in = raw_input('Welcome to Caesar cipher! Please type in the code you want to encode or decode. Watch the captalization: ')
 
 code_out = ''
 words = ''
 
 letters = list(code_in)
-print letters
 
-for letter in letters:
-	if letter == '!' or letter == '?':
-	    code_out += letter
-	    break
-	code_out += encode_dict.get(letter)
-	
-print 
+for c in letters:
+	if c == '!' or c == '?' or c == '.' :
+	    code_out += c
+	elif c == ' ':
+	    code_out += ' ' 
+	else:
+	    code_out += encode_dict.get(c)
+
+print 'Encoding/decoding. Please wait a few seconds....'
+sleep (5)
+print code_out
+
 	
 	    
 	 
